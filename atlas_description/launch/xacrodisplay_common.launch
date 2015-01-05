@@ -8,5 +8,5 @@
   <param name="use_gui" value="True"/>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find thor_mang_description)/rviz/xacrodisplay.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find atlas_description)/rviz/xacrodisplay.rviz"/>
 </launch>
