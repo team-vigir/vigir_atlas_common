@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <include file="$(find atlas_description)/launch/xacrodisplay_common.launch">
+    <arg name="robot_description" value="$(find xacro)/xacro.py $(find atlas_description)/robots/vigir_atlas.urdf.xacro"/>  
+  </include>  
+  
+</launch>

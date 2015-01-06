@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_irobot" >
+  
+<!--  <xacro:include filename="$(find flor_atlas_description)/robots/flor_irobot_hand.urdf.xacro" />
+
+  <xacro:irobot_hand side="left" parent="l_hand" reflect="-1">
+    <origin rpy="1.57079 3.14159 3.14159" xyz="0 0.13 0"/>
+  </xacro:irobot_hand>-->
+  
+  <xacro:include filename="$(find irobot_hand_description)/urdf/irobot_hand.urdf.xacro" />
+
+  <xacro:irobot_hand side="left" parent="l_hand" reflect="-1">
+    <origin rpy="1.57079 0 3.14159" xyz="0 0.09 0"/>
+  </xacro:irobot_hand>
+
+  <gazebo>
+    <!-- plugin for left irobot hand -->
+    <plugin name="left_irobot_hand_plugin" filename="libIRobotHandPlugin.so">
+      <side>left</side>
+    </plugin>
+  </gazebo>
+
+</robot>

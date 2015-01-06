@@ -1,0 +1,42 @@
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_irobot" >
+  
+  <xacro:include filename="$(find flor_atlas_description)/robots/flor_irobot_hand.urdf.xacro" />
+  
+  <xacro:property name="extension_length" value="0.15" />
+  <xacro:property name="extension_radius" value="0.04" />
+  
+  
+    <link name="l_arm_extension">
+      <inertial>
+        <mass value="0.3"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+    <collision>
+      <geometry>
+        <cylinder length="${extension_length}" radius="${extension_radius}"/>
+      </geometry>
+      <origin rpy="1.57079633 0 0" xyz="0 0 0.0"/>
+    </collision>
+    <visual>
+      <geometry>
+        <cylinder length="${extension_length}" radius="${extension_radius}"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+      <origin rpy="1.57079633 0 0" xyz="0 0 0.0"/>
+    </visual>
+  </link>
+  
+  <joint name="l_hand_to_extension_joint" type="fixed">
+      <parent link="l_hand"/>
+      <child link="l_arm_extension"/>
+      <origin xyz="0.0  ${0.13+extension_length*0.5} 0" rpy="0 0 0"/>
+  </joint>
+
+  <xacro:irobot_hand side="left" parent="l_arm_extension" reflect="-1">
+    <origin rpy="1.57079 3.14159 3.14159" xyz="0 ${extension_length*0.5} 0"/>
+  </xacro:irobot_hand>
+
+</robot>

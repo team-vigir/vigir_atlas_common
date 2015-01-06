@@ -1,0 +1,9 @@
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="r_checkerboard" >
+
+  <xacro:include filename="$(find flor_atlas_description)/robots/checkerboard_hands.urdf.xacro" />
+  
+  <xacro:r_checkerboard_hand />
+
+</robot>
+
+

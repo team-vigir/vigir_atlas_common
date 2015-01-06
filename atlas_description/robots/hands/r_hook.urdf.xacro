@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="r_hook" >
+
+  <xacro:include filename="$(find flor_atlas_description)/robots/flor_hook_hand.urdf.xacro" />
+
+  <xacro:flor_hook_hand side="right" parent="r_hand">
+    <origin rpy="0.0 0.0 3.14159265" xyz="0.0  -0.13 0.0115"/>
+  </xacro:flor_hook_hand>
+
+</robot>
