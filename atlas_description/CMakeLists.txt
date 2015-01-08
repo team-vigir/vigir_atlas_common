@@ -29,11 +29,13 @@ install(FILES
 # "special processing" means:
 #   - strip out ros plugins
 #   - ???
-include(${CMAKE_CURRENT_SOURCE_DIR}/../tools/URDF_helpers.cmake)
-make_standalone_models(atlas_description atlas_description ${standalone_name})
+
+#include(${CMAKE_CURRENT_SOURCE_DIR}/../tools/URDF_helpers.cmake)
+#make_standalone_models(atlas_description atlas_description ${standalone_name})
 
 # Copy all the meshes and materials into drcsim_standalone_models/atlas_description
-install(DIRECTORY
-  meshes meshes_v3 meshes_v4 meshes_unplugged materials
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/${standalone_name}/atlas_description
-)
+
+#install(DIRECTORY
+#  meshes meshes_v3 meshes_v4 meshes_unplugged materials
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/${standalone_name}/atlas_description
+#)
