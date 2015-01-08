@@ -937,7 +937,7 @@
       <limit effort="25" velocity="12" lower="0" upper="3.14159" />
       <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="13.1416" />
     </joint>
-    <joint name="l_arm_wry2" type="revolute">
+    <joint name="l_arm_wry2" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 1 0" />
       <parent link="l_lfarm" />
@@ -1063,7 +1063,7 @@
       <limit effort="25" velocity="12" lower="0" upper="3.14159" />
       <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="13.1416" />
     </joint>
-    <joint name="r_arm_wry2" type="revolute">
+    <joint name="r_arm_wry2" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 1 0" />
       <parent link="r_lfarm" />
