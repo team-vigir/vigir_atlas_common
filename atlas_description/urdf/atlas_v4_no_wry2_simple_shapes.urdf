@@ -74,7 +74,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="l_lfarm">
+  <link name="l_hand">
     <inertial>
       <mass value="2.509"/>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -106,13 +106,13 @@
       </geometry>
     </collision>
   </link>
-  <link name="l_hand">
+<!--  <link name="l_hand">
     <inertial>
       <mass value="0.1"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
     </inertial>
-  </link>
+  </link>-->
   <link name="l_larm">
     <inertial>
       <mass value="2.509"/>
@@ -502,7 +502,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="r_lfarm">
+  <link name="r_hand">
     <inertial>
       <mass value="2.509"/>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -532,13 +532,13 @@
       </geometry>
     </collision>
   </link>
-  <link name="r_hand">
+<!--  <link name="r_hand">
     <inertial>
       <mass value="0.1"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
     </inertial>
-  </link>
+  </link>-->
   <link name="r_larm">
     <inertial>
       <mass value="2.509"/>
@@ -923,7 +923,7 @@
       <origin xyz="0 0.119 0.0092" rpy="0 -0 0" />
       <axis xyz="1 0 0" />
       <parent link="l_ufarm" />
-      <child link="l_lfarm" />
+      <child link="l_hand" />
       <dynamics damping="0.1" friction="0" />
       <limit effort="25" velocity="12" lower="-1.1781" upper="1.1781" />
       <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-11.1781" soft_upper_limit="11.1781" />
@@ -937,11 +937,11 @@
       <limit effort="25" velocity="12" lower="0" upper="3.14159" />
       <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="13.1416" />
     </joint>
-    <joint name="l_arm_wry2" type="fixed">
+<!--    <joint name="l_arm_wry2" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="l_lfarm" />
       <child link="l_hand" />
-    </joint>
+    </joint>-->
     <joint name="l_leg_akx" type="revolute">
       <origin xyz="0 0 0" rpy="0 -0 0" />
       <axis xyz="1 0 0" />
@@ -1045,7 +1045,7 @@
       <origin xyz="0 -0.119 0.0092" rpy="0 -0 0" />
       <axis xyz="1 0 0" />
       <parent link="r_ufarm" />
-      <child link="r_lfarm" />
+      <child link="r_hand" />
       <dynamics damping="0.1" friction="0" />
       <limit effort="25" velocity="12" lower="-1.1781" upper="1.1781" />
       <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-11.1781" soft_upper_limit="11.1781" />
@@ -1059,11 +1059,11 @@
       <limit effort="25" velocity="12" lower="0" upper="3.14159" />
       <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="13.1416" />
     </joint>
-    <joint name="r_arm_wry2" type="fixed">
+<!--    <joint name="r_arm_wry2" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="r_lfarm" />
       <child link="r_hand" />
-    </joint>
+    </joint>-->
     <joint name="r_leg_akx" type="revolute">
       <origin xyz="0 0 0" rpy="0 -0 0" />
       <axis xyz="1 0 0" />
