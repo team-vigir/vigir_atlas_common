@@ -2,24 +2,19 @@
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_robotiq" >
 
-  <!--xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_mesh_macro.xacro" />
-  <xacro:s-model_mesh prefix="left_" parent="l_hand">
-    <origin rpy="3.14159 -1.57 3.14159" xyz="0 0.18 0.01"/>
-  </xacro:s-model_mesh-->
-  
-  <!--xacro:include filename="$(find flor_atlas_description)/robots/flor_robotiq_hand.urdf.xacro" />
+  <xacro:include filename="$(find flor_atlas_description)/robots/flor_robotiq_hand.urdf.xacro" />
   	
   <xacro:s-model_articulated prefix="left" parent="l_hand">
     <origin rpy="3.14159 -1.57 3.14159" xyz="0 0.18 0.01"/>
-  </xacro:s-model_articulated-->
+  </xacro:s-model_articulated>
   
-  <xacro:include filename="$(find flor_robotiq_hands_tools)/urdf/robotiq_hand.urdf.xacro" />
-
   <!-- Set the initial hand position and orientation by changing 'rpy' and 'xyz'
-  to mach the values in your actual robot. -->
+  to mach the values in your actual robot. 
+  <xacro:include filename="$(find robotiq_hand_description)/urdf/robotiq_hand.urdf.xacro" />
+
   <xacro:robotiq_hand prefix="left_" parent="l_hand" reflect="-1">
     <origin rpy="3.14159 -1.57 3.14159" xyz="-0.00125 0.17 0.01"/>
-  </xacro:robotiq_hand>
+  </xacro:robotiq_hand>-->
 
   <gazebo>
     <plugin name="left_robotiq_hand_plugin" filename="libRobotiqHandPlugin.so">
