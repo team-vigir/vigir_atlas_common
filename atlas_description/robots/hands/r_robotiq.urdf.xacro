@@ -17,7 +17,7 @@
   </xacro:robotiq_hand>-->  
 
   <gazebo>
-    <plugin name="right_robotiq_hand_plugin" filename="libRobotiqHandPlugin.so">
+    <plugin name="right_robotiq_hand_plugin" filename="libVigirRobotiqHandPlugin.so">
       <side>right</side>
       <kp_position>5.0</kp_position>
       <kd_position>0.5</kd_position>
