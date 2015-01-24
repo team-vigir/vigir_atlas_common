@@ -10,7 +10,31 @@
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_LEFT_HAND_TYPE).urdf.xacro" />
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_RIGHT_HAND_TYPE).urdf.xacro" />
   
-  
+    <joint name="l_guard_joint" type="fixed">
+      <origin xyz="0.0  0.06 0.0215" rpy="0 ${3.14159265} 0"/> 
+      <parent link="l_hand"/>
+      <child link="l_guard_link"/>
+    </joint>
+
+    <link name="l_guard_link">
+      <inertial>
+        <origin xyz="0 0 0" /> 
+        <mass value="0.01" />
+        <inertia  ixx="0.00000001" ixy="0.0"  ixz="0.0"  iyy="0.00000001"  iyz="0.0"  izz="0.00000001" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://flor_atlas_description/meshes/hand_guard_axis_adjusted_2000_poly_repaired.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://flor_atlas_description/meshes/hand_guard_axis_adjusted_2000_poly_repaired.stl"/>
+        </geometry>
+      </collision>
+    </link>
   
   <!--Optionally, add artag (see #2074) -->
   <!--
