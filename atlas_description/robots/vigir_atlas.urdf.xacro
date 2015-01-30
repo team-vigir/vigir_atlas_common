@@ -11,7 +11,7 @@
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_RIGHT_HAND_TYPE).urdf.xacro" />
   
     <joint name="l_guard_joint" type="fixed">
-      <origin xyz="0.0  0.06 0.0215" rpy="0 ${3.14159265} 0"/> 
+      <origin xyz="-0.001  0.0942 0.010" rpy="0 0 0"/> 
       <parent link="l_hand"/>
       <child link="l_guard_link"/>
     </joint>
@@ -25,13 +25,13 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://flor_atlas_description/meshes/hand_guard_axis_adjusted_2000_poly_repaired.stl"/>
+          <mesh filename="package://flor_atlas_description/meshes/hand_guard_reoriented_10_09_30.stl"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://flor_atlas_description/meshes/hand_guard_axis_adjusted_2000_poly_repaired.stl"/>
+          <mesh filename="package://flor_atlas_description/meshes/hand_guard_reoriented_10_09_30.stl"/>
         </geometry>
       </collision>
     </link>
