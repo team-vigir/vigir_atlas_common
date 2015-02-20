@@ -1,0 +1,3 @@
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_guard" >
+
+</robot>
