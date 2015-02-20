@@ -7,14 +7,38 @@
 <!--  <xacro:include filename="$(find flor_atlas_description)/multisense/$(env FLOR_MULTISENSE_TYPE).urdf.xacro" />-->
   <xacro:include filename="$(find multisense_sl_description)/urdf/multisense_sl_v3.urdf" />
 
-  <xacro:include filename="$(find atlas_description)/robots/hands/$(env VIGIR_LEFT_GUARD_TYPE).urdf.xacro" />
-  <xacro:include filename="$(find atlas_description)/robots/hands/$(env VIGIR_RIGHT_GUARD_TYPE).urdf.xacro" />
-  
+  <!--xacro:include filename="$(find atlas_description)/robots/hands/$(env VIGIR_LEFT_GUARD_TYPE).urdf.xacro" /-->
+  <!--xacro:include filename="$(find atlas_description)/robots/hands/$(env VIGIR_RIGHT_GUARD_TYPE).urdf.xacro" /-->
+
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_LEFT_HAND_TYPE).urdf.xacro" />
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_RIGHT_HAND_TYPE).urdf.xacro" />
-  
-  
-  
+
+    <joint name="l_guard_joint" type="fixed">
+      <origin xyz="-0.001  0.0942 0.010" rpy="0 0 0"/>
+      <parent link="l_hand"/>
+      <child link="l_guard_link"/>
+    </joint>
+
+    <link name="l_guard_link">
+      <inertial>
+        <origin xyz="0 0 0" />
+        <mass value="0.01" />
+        <inertia  ixx="0.00000001" ixy="0.0"  ixz="0.0"  iyy="0.00000001"  iyz="0.0"  izz="0.00000001" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://flor_atlas_description/meshes/vigir_robotiq_guard.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://flor_atlas_description/meshes/vigir_robotiq_guard.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
   <!--Optionally, add artag (see #2074) -->
   <!--
   <xacro:include filename="$(find flor_atlas_description)/robots/artag.urdf.xacro" />
