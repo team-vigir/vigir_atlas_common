@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_guard" >
+
+  <xacro:include filename="$(find flor_atlas_description)/robots/vigir_robotiq_guard.urdf.xacro" />
+  	
+  <xacro:vigir_robotiq_guard prefix="left"  parent="l_hand">
+    <origin rpy="0 0 0" xyz="0 0.115 0.01"/>
+  </xacro:vigir_robotiq_guard>
+</robot>
