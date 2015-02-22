@@ -2,21 +2,23 @@
 <!--Provides enlarged hand links for self filtering-->
 <robot name="drc_skeleton">
 
-  <link name="l_hand">
-    <inertial>
-      <mass value="0.5839" />
-      <origin xyz="0.00016 0.08159 0.00002" rpy="0 0 0" />
-      <inertia ixx="0.000388" ixy="0" ixz="0" iyy="0.000477" iyz="0" izz="0.000379" />
-    </inertial>
-  </link>
+    <link name="l_hand">
+        <collision>
+          <origin rpy="1.5707963267949 0 0" xyz="0.0 0.1 0.0"/>
+          <geometry>
+            <cylinder radius="0.15" length="0.3"/>
+          </geometry>
+        </collision>
+    </link>
 
 
   <link name="r_hand">
-    <inertial>
-      <mass value="0.5839" />
-      <origin xyz="0.00016 -0.08159 0.00002" rpy="0 0 0" />
-      <inertia ixx="0.000388" ixy="0" ixz="0" iyy="0.000477" iyz="0" izz="0.000379" />
-    </inertial>
+    <collision>
+      <origin rpy="-1.5707963267949 0 0" xyz="0.0 -0.1 0.0"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.3"/>
+      </geometry>
+    </collision>
   </link>
 
 </robot>
