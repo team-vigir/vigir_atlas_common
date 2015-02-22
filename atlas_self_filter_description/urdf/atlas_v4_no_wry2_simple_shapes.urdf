@@ -80,32 +80,6 @@
       </geometry>
     </collision>
   </link>
-  <link name="l_hand">
-    <inertial>
-      <mass value="2.509"/>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <inertia ixx="0.00265" ixy="0" ixz="0" iyy="0.00446" iyz="0" izz="0.00446"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://atlas_description/meshes_v3/l_hand.dae" scale="1 1 1"/>
-      </geometry>
-    </visual>
-
-    <collision>
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 0.1 0.01"/>
-      <geometry>
-        <cylinder radius="0.03" length="0.05"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.001 0.05 0.01"/>
-      <geometry>
-        <box size="0.13 0.09 0.07"/>
-      </geometry>
-    </collision>
-  </link>
   <link name="l_larm">
     <inertial>
       <mass value="2.509"/>
@@ -479,30 +453,6 @@
       <origin xyz="${0.1225} 0 ${-0.0641}" rpy="0 0 0"/>
       <geometry>
         <box size="0.1 ${0.08} 0.02"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="r_hand">
-    <inertial>
-      <mass value="2.509"/>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <inertia ixx="0.00265" ixy="0" ixz="0" iyy="0.00446" iyz="0" izz="0.00446"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="package://atlas_description/meshes_v3/r_hand.dae" scale="1 1 1"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="1.5707963267949 0 0" xyz="0.001 -0.1 0.01"/>
-      <geometry>
-        <cylinder radius="0.03" length="0.05"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.001 -0.05 0.01"/>
-      <geometry>
-        <box size="0.13 0.09 0.07"/>
       </geometry>
     </collision>
   </link>
