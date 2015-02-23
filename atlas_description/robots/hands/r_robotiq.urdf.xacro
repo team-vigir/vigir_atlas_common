@@ -3,6 +3,7 @@
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="r_robotiq" >
   
   <xacro:include filename="$(find flor_atlas_description)/robots/flor_robotiq_hand.urdf.xacro" />
+  <xacro:include filename="$(find flor_atlas_description)/robots/$(optenv VIGIR_RIGHT_GUARD_TYPE r_no_guard)_robotiq_hand_macros.urdf.xacro" />
 	
   <xacro:s-model_articulated prefix="right" parent="r_hand">
     <origin rpy="3.14159 -1.57 0" xyz="0 -0.23 0.0"/>

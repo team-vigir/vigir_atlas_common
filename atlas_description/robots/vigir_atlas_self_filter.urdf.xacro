@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
+
+  <xacro:include filename="$(find atlas_description)/robots/vigir_atlas.urdf.xacro" />
+    
+  
+  <!--Optionally, add artag (see #2074) -->
+  <!--
+  <xacro:include filename="$(find flor_atlas_description)/robots/artag.urdf.xacro" />
+
+  <xacro:artag parent="l_hand" name="artag_01">
+    <origin xyz="-0.05 0 0.11" rpy="0 0 0"/>
+  </xacro:artag>
+  -->
+  
+</robot>
