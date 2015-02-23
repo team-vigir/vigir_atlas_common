@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--Copy of vigir_atlas.urdf.xacro for now, should use common code in future-->
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
+  <xacro:include filename="$(find atlas_self_filter_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2)_simple_shapes.urdf"/>
+  
+  <!--
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2).gazebo" />
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2).transmission" />
+  -->
+  <!--  <xacro:include filename="$(find flor_atlas_description)/multisense/$(env FLOR_MULTISENSE_TYPE).urdf.xacro" />-->
+  
+  <xacro:include filename="$(find multisense_sl_description)/urdf/multisense_sl_v3.urdf" />
+  
+  <xacro:include filename="$(find atlas_self_filter_description)/urdf/hand_filter_shapes.urdf"/>
+  
+
+  <!--Hand collisions are summed under the expanded hand links-->
+  <!--
+  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv VIGIR_LEFT_GUARD_TYPE l_no_guard).urdf.xacro" />
+  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv VIGIR_RIGHT_GUARD_TYPE r_no_guard).urdf.xacro" />
+  
+  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv FLOR_LEFT_HAND_TYPE l_stump).urdf.xacro" />
+  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv FLOR_RIGHT_HAND_TYPE r_stump).urdf.xacro" />
+  -->
+  
+</robot>
