@@ -1,10 +1,12 @@
+<?xml version="1.0"?>
+
 <robot name="multisense">
   <!-- Head Link Simplified Collision Mesh -->
-  <link name="head_root"/>
+  <!--  <link name="head_root"/>
   <joint name="head_root_joint" type="fixed">
     <parent link="head_root"/>
     <child link="head"/>
-  </joint>
+  </joint>-->
   <link name="head">
     <inertial>
       <origin xyz="-0.075493 3.3383E-05 0.02774" rpy="0 0 0" />
@@ -180,21 +182,21 @@
   <link name="accel"/>
   <joint name="accel_joint" type="fixed">
     <origin xyz="-.0475 .0302 -.00275" rpy="0 1.5707 0"/>
-    <parent link="head_root"/>
+    <parent link="head"/>
     <child link="accel"/>
   </joint>
 
   <link name="mag"/>
   <joint name="mag_joint" type="fixed">
     <origin xyz="-.0475 .0302 -.00275" rpy="0 1.5707 0"/>
-    <parent link="head_root"/>
+    <parent link="head"/>
     <child link="mag"/>
   </joint>
 
   <link name="gyro"/>
   <joint name="gyro_joint" type="fixed">
     <origin xyz="-.0476 .0388 -.00075" rpy="1.5707 3.14159 1.5707 "/>
-    <parent link="head_root"/>
+    <parent link="head"/>
     <child link="gyro"/>
   </joint>
 
