@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
+  <!--For sim, use OSRF Multisense-->
+  <xacro:include filename="$(find multisense_sl_description)/urdf/multisense_sl_v3.urdf" />
+</robot>

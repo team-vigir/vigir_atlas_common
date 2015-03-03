@@ -5,7 +5,7 @@
   <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2).gazebo" />
   <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2).transmission" />
   
-  <xacro:include filename="$(find multisense_sl_description)/urdf/multisense_sl_v3.urdf" />
+  <xacro:include filename="$(find atlas_description)/robots/multisense/$(optenv FLOR_MULTISENSE_TYPE sim)_multisense.urdf.xacro" />
   
   <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv FLOR_LEFT_HAND_TYPE l_stump).urdf.xacro" />
   <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv FLOR_RIGHT_HAND_TYPE r_stump).urdf.xacro" />
