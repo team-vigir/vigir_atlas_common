@@ -13,31 +13,6 @@
   <!--Add a frame for use with high fidelity LIDAR projection-->
   <link name="hokuyo_spin_axis_frame"/>
   
-    <joint name="l_guard_joint" type="fixed">
-      <origin xyz="-0.001  0.0942 0.010" rpy="0 3.14159 0"/> 
-      <parent link="l_hand"/>
-      <child link="l_guard_link"/>
-    </joint>
-
-    <link name="l_guard_link">
-      <inertial>
-        <origin xyz="0 0 0" /> 
-        <mass value="0.01" />
-        <inertia  ixx="0.00000001" ixy="0.0"  ixz="0.0"  iyy="0.00000001"  iyz="0.0"  izz="0.00000001" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://atlas_description/meshes/vigir_robotiq_guard.stl"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://atlas_description/meshes/vigir_robotiq_guard.stl"/>
-        </geometry>
-      </collision>
-    </link>
   <joint name="hokoyo_spin_axis_joint" type="fixed">
     <axis xyz="0 1 0" />
     <origin xyz="${-0.0446+0.03} 0 0.0880" rpy="0 0 0"/>
