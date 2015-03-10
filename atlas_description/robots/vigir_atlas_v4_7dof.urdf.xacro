@@ -6,12 +6,13 @@
   <xacro:include filename="$(find atlas_description)/urdf/atlas_v4.transmission" />
 <!--  <xacro:include filename="$(find flor_atlas_description)/multisense/$(env FLOR_MULTISENSE_TYPE).urdf.xacro" />-->
   <xacro:include filename="$(find multisense_sl_description)/urdf/multisense_sl_v3.urdf" />
-  
+
+  <!--xacro:include filename="$(find atlas_description)/robots/hands/$(env VIGIR_LEFT_GUARD_TYPE).urdf.xacro" /-->
+  <!--xacro:include filename="$(find atlas_description)/robots/hands/$(env VIGIR_RIGHT_GUARD_TYPE).urdf.xacro" /-->
+
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_LEFT_HAND_TYPE).urdf.xacro" />
   <xacro:include filename="$(find atlas_description)/robots/hands/$(env FLOR_RIGHT_HAND_TYPE).urdf.xacro" />
-  
-  
-  
+
   <!--Optionally, add artag (see #2074) -->
   <!--
   <xacro:include filename="$(find flor_atlas_description)/robots/artag.urdf.xacro" />
