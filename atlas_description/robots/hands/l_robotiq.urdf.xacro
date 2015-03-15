@@ -6,7 +6,7 @@
   <xacro:include filename="$(find flor_atlas_description)/robots/$(optenv VIGIR_LEFT_GUARD_TYPE l_no_guard)_robotiq_hand_macros.urdf.xacro" />
   	
   <xacro:s-model_articulated prefix="left" parent="l_hand">
-    <origin rpy="0 -1.57 0" xyz="0 0.21 0.01"/>
+    <origin rpy="0 -0.523 0" xyz="0 0.189 0.01"/>
   </xacro:s-model_articulated>
   
   <!-- Set the initial hand position and orientation by changing 'rpy' and 'xyz'
