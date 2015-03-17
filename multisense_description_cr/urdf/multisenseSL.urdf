@@ -31,7 +31,7 @@
   </link>
 
 
-  <joint name="left_camera_optical_joint" type="continuous">
+  <joint name="left_camera_optical_joint" type="fixed">
     <parent link="left_camera_optical_frame" />
     <child link="motor" />
   </joint>
@@ -45,7 +45,7 @@
     <axis xyz="0 0 1" />
   </joint>
 
-  <joint name="spindle_joint" type="continuous">
+  <joint name="spindle_joint" type="fixed">
     <parent link="spindle" />
     <child link="hokuyo_link" />
   </joint>
