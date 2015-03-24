@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
+  <!--For real robot, use our copy of CR Multisense-->
+  <xacro:include filename="$(find multisense_description_cr)/urdf/multisenseSL.urdf" />
+</robot>
