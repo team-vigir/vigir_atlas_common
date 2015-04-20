@@ -4,11 +4,14 @@
   
   <xacro:include filename="$(find flor_atlas_description)/robots/flor_robotiq_hand.urdf.xacro" />
   <xacro:include filename="$(find flor_atlas_description)/robots/$(optenv VIGIR_RIGHT_GUARD_TYPE r_no_guard)_robotiq_hand_macros.urdf.xacro" />
-	
+  <xacro:include filename="$(find flor_atlas_description)/robots/vigir_robotiq_palm_camera.urdf.xacro" />
+
   <xacro:s-model_articulated prefix="right" parent="r_hand">
     <origin rpy="3.14159 -1.57 0" xyz="0 -0.21 0.0"/>
   </xacro:s-model_articulated>
   
+  <xacro:palm_camera prefix="right" />
+
   <!-- Set the initial hand position and orientation by changing 'rpy' and 'xyz'
   to mach the values in your actual robot. 
   <xacro:include filename="$(find robotiq_hand_description)/urdf/robotiq_hand.urdf.xacro" />
