@@ -7,7 +7,7 @@
   <xacro:include filename="$(find flor_atlas_description)/robots/vigir_robotiq_palm_camera.urdf.xacro" />
   	
   <xacro:s-model_articulated prefix="left" parent="l_hand">
-    <origin rpy="0 -1.57 0" xyz="0 0.18 0.0"/>
+    <origin rpy="0 -1.57 0" xyz="0 0.185 0.0"/>
   </xacro:s-model_articulated>
 
   <xacro:palm_camera prefix="left" />
