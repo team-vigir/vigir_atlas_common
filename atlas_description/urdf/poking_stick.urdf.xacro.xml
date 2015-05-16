@@ -25,19 +25,19 @@
    <visual>
      <origin xyz="${-length*0.5} 0 0" rpy="0 ${M_PI*0.5} 0" />
      <geometry>
-       <cylinder radius="0.007" length="${length}" />
+       <cylinder radius="0.005" length="${length}" />
      </geometry>
      <material name="Grey">
        <color rgba="0.4 0.4 0.4 1.0"/>
      </material>
    </visual>
 
-<!--   <collision>
+   <collision>
      <origin xyz="${-length*0.5} 0 0" rpy="0 ${M_PI*0.5} 0" />
      <geometry>
-       <cylinder radius="0.007" length="${length}" />
+       <cylinder radius="0.005" length="${length}" />
      </geometry>
-   </collision>-->
+   </collision>
  </link>
   
   </macro>
