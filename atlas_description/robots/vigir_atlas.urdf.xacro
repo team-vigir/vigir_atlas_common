@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2)_simple_shapes.urdf"/>
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2).gazebo" />
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v4_no_wry2).transmission" />
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5)_simple_shapes.urdf"/>
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).gazebo" />
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).transmission" />
   
   <xacro:include filename="$(find atlas_description)/robots/multisense/$(optenv FLOR_MULTISENSE_TYPE sim)_multisense.urdf.xacro" />
   
@@ -19,6 +19,16 @@
     <parent link="head"/>
     <child link="hokuyo_spin_axis_frame"/>
   </joint>  
+  
+  <xacro:include filename="$(find atlas_description)/urdf/poking_stick.urdf.xacro.xml" />
+  
+  <xacro:poking_stick_macro parent="utorso" prefix="left" length="0.15">
+    <origin xyz="0.35 0.1128 0.3805" rpy="0 0 0"/>
+  </xacro:poking_stick_macro>
+  
+  <xacro:poking_stick_macro parent="utorso" prefix="right" length="0.15">
+    <origin xyz="0.35 -0.1128 0.3805" rpy="0 0 0"/>
+  </xacro:poking_stick_macro>
   
   
   <!--Optionally, add artag (see #2074) -->
