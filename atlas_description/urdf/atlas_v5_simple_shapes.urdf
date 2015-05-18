@@ -1035,7 +1035,7 @@
   </joint>
   <joint name="l_arm_wry2" type="revolute">
     <origin rpy="0 3.14159265359 0" xyz="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <parent link="l_lfarm"/>
     <child link="l_hand"/>
     <dynamics damping="0.1" friction="0"/>
