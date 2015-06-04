@@ -20,6 +20,7 @@
     <child link="hokuyo_spin_axis_frame"/>
   </joint>  
   
+  <!--
   <xacro:include filename="$(find atlas_description)/urdf/poking_stick.urdf.xacro.xml" />
   
   <xacro:poking_stick_macro parent="utorso" prefix="left" length="0.15">
@@ -29,6 +30,7 @@
   <xacro:poking_stick_macro parent="utorso" prefix="right" length="0.15">
     <origin xyz="0.35 -0.1128 0.3805" rpy="0 0 0"/>
   </xacro:poking_stick_macro>
+  -->
   
   
   <!--Optionally, add artag (see #2074) -->
