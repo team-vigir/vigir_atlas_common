@@ -849,6 +849,36 @@
         <mesh filename="package://atlas_description/meshes_unplugged/utorso.dae"/>
       </geometry>
     </visual>
+    
+    <!--
+    <visual>
+      <geometry>
+        <mesh filename="package://atlas_description/meshes_unplugged/utorso_crash_protection.stl" />
+      </geometry>
+    </visual>
+    -->
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0 0.45"/>
+      <geometry>
+        <cylinder length="0.11" radius="0.35"/>
+      </geometry>
+    </collision>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0.07 0.28 0.45"/>
+      <geometry>
+        <cylinder length="0.11" radius="0.15"/>
+      </geometry>
+    </collision>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0.07 -0.28 0.45"/>
+      <geometry>
+        <cylinder length="0.11" radius="0.15"/>
+      </geometry>
+    </collision>   
+    
     <collision>
       <origin rpy="0 0 0" xyz="-0.102 0 0.25"/>
       <geometry>
