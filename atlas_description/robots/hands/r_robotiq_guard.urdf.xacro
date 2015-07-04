@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="r_guard" >
   
-  <xacro:include filename="$(find flor_atlas_description)/robots/vigir_robotiq_guard.urdf.xacro" />
+  <xacro:include filename="$(find vigir_atlas_addons_description)/robots/vigir_robotiq_guard.urdf.xacro" />
 	
   <xacro:vigir_robotiq_guard prefix="right" parent="r_hand">
     <origin rpy="3.14159 3.14159 0" xyz="0 -0.115 0.01"/>

@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_payload" >
     
-  <xacro:include filename="$(find flor_atlas_description)/robots/flor_payload.urdf.xacro" />
+  <xacro:include filename="$(find vigir_atlas_addons_description)/robots/flor_payload.urdf.xacro" />
 
   <xacro:flor_payload_hand side="left" parent="l_hand">
     <origin rpy="0.0 0.0 0.0" xyz="0.0  0.13 0.0115"/>  <!-- Need correct position of payload with respect to lef wrist (l_hand axis) -->
