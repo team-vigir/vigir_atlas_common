@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="payload">
+
+<!-- roslaunch urdf_tutorial display.launch model:=handle.urdf gui:=True -->
+<!-- rosrun xacro xacro.py handle_urdf.xacro > handle.urdf -->
+<!-- tip: use measurements from solid to find the origins and length -->
+
+
+<xacro:macro name="flor_payload_hand" params="side parent *origin">
+  
+  <!-- joint to irobot hand -->
+  <joint name="${side}_payload_hand_joint" type="fixed">
+    <insert_block name="origin"/>
+    <parent link="${parent}"/>
+    <child link="${side}_payload_base_link"/>
+  </joint>
+
+  <link name="${side}_payload_base_link">
+      <inertial>
+        <mass value="6.0"/>
+        <origin xyz="0 0.0540 0"/>
+        <inertia ixx="0.0260" ixy="0.0" ixz="0.0" iyy="0.0116" iyz="0.0" izz="0.0260"/> 
+      </inertial> <!-- from vigir_matlab/atlas_toolbox/experiments/identification_payload/ident_payload_data.m -->
+    <collision>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_payload/payload.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_payload/payload.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1"/>
+      </material>
+    </visual>
+  </link>
+
+</xacro:macro>
+
+</robot>

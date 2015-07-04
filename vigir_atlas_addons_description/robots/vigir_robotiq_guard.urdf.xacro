@@ -1,0 +1,42 @@
+<? xml version="1.0"?>
+<!--
+Vigir Robotiq Guard
+
+Creates a Robotiq Guard with the passed in prefix.
+
+-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="vigir_robotiq_guard" params="prefix parent *origin">
+
+	<!-- Joint to connect with robot parent-->
+        <joint name="${prefix}_robotiq_guard_joint" type="fixed">
+		<parent link="${parent}"/>
+                <child link="${prefix}_guard"/>
+		<insert_block name="origin" />
+	</joint>	
+		<!-- link list -->
+        <link name="${prefix}_guard">
+            <visual>
+                <geometry>
+                        <mesh filename="package://flor_atlas_description/meshes/vigir_robotiq_guard.stl" />
+                </geometry>
+                <material name="black">
+                        <color rgba="0 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                        <mesh filename="package://flor_atlas_description/meshes/vigir_robotiq_guard.stl" />
+                </geometry>
+                <material name="yellow">
+                        <color rgba="0 1 1 1"/>
+                </material>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.75"/>
+                <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
+            </inertial>
+        </link>
+    </xacro:macro>
+</robot>

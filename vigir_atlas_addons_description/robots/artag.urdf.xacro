@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="artag" >
+
+  <xacro:macro name="artag" params="name parent *origin">
+    
+    <joint name="${name}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+    </joint>
+      
+    <link name="${name}_link">
+      <inertial>
+        <origin xyz="0 0 0" /> 
+        <mass value="0.01" />
+        <inertia  ixx="0.00000001" ixy="0.0"  ixz="0.0"  iyy="0.00000001"  iyz="0.0"  izz="0.00000001" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 -1.57079632679 0"/>
+        <geometry>
+          <mesh filename="package://flor_atlas_description/meshes/${name}.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://flor_atlas_description/meshes/${name}.dae"/>
+        </geometry>
+      </collision>
+    </link>
+  
+     <joint name="${name}_background_joint" type="fixed">
+      <origin xyz="0 0 -0.001" rpy="0 0 0" />
+      <parent link="${name}_link"/>
+      <child link="${name}_background_link"/>
+    </joint>
+    
+    <link name="${name}_background_link">
+      <inertial>
+        <origin xyz="0 0 0" /> 
+        <mass value="0.01" />
+        <inertia  ixx="0.00000001" ixy="0.0"  ixz="0.0"  iyy="0.00000001"  iyz="0.0"  izz="0.00000001" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 0.001" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 0.0001" />
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="${name}_link">
+      <!--      
+      <material>artag/${name}</material>
+      <turnGravityOff>false</turnGravityOff>
+      <static>false</static>
+      -->
+    </gazebo>
+    
+    <gazebo reference="${name}_background_link">
+      <material>Gazebo/White</material>
+      <!--
+      <turnGravityOff>false</turnGravityOff>
+      <static>false</static>
+      -->
+    </gazebo>
+   
+    
+  </xacro:macro>
+  
+</robot>

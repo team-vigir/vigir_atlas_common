@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<robot name="checkerboards" xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+
+    <xacro:property name="checkerbox_side_length" value="0.025" />
+    <xacro:property name="dist_from_hand_joint" value="0.13" />
+    
+    <xacro:property name="scale" value="${checkerbox_side_length/0.08533}" />    
+    <xacro:property name="z_translation" value="${(checkerbox_side_length/0.08533)/-2.6042}" />
+    <xacro:property name="y_translation" value="${(checkerbox_side_length/0.08533)*0.993*0.5+dist_from_hand_joint}" />
+    
+    
+<!--    <xacro:property name="z_translation" value="${scale/2.6042}" />-->
+<!--    <xacro:property name="z_translation" value="${checkerbox_side_length}" />-->
+
+    
+    <xacro:macro name="l_checkerboard_hand">
+    
+    <link name="l_checkerboard">
+        <inertial>
+            <mass value="0.5" />
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <inertia ixx="0.00265" ixy="0" ixz="0" iyy="0.00446" iyz="0" izz="0.00446" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://flor_atlas_description/meshes_v3/checkerboard.dae" scale="${scale} ${scale} ${scale}" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://flor_atlas_description/meshes_v3/checkerboard.dae" scale="${scale} ${scale} ${scale}" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="l_checkerboard_joint" type="fixed">
+      <parent link="l_hand"/>
+      <child link="l_checkerboard"/>
+      <!-- if camera points x-forward, bottom towards front of robot, 15 degree yaw forwards from
+           lateral (+y) view -->
+      <origin xyz="0.0 ${y_translation} 0.0" rpy="0.0 -1.5708 0.0"/>
+    </joint>
+    
+    
+    </xacro:macro>
+    
+      
+    <xacro:macro name="r_checkerboard_hand">  
+    
+    <link name="r_checkerboard">
+        <inertial>
+            <mass value="0.5" />
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <inertia ixx="0.00265" ixy="0" ixz="0" iyy="0.00446" iyz="0" izz="0.00446" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://flor_atlas_description/meshes_v3/checkerboard.dae" scale="${scale} ${scale} ${scale}" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://flor_atlas_description/meshes_v3/checkerboard.dae" scale="${scale} ${scale} ${scale}" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="r_checkerboard_joint" type="fixed">
+      <parent link="r_hand"/>
+      <child link="r_checkerboard"/>
+      <!-- if camera points x-forward, bottom towards front of robot, 15 degree yaw forwards from
+           lateral (+y) view -->
+      <origin xyz="0.0 -${y_translation} 0.0" rpy="0 -1.5708 0.0"/>
+    </joint>
+  </xacro:macro>
+    
+</robot>

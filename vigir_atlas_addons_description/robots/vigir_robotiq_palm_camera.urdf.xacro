@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:property name="camera_box_extents" value="0.02 0.004 0.02" />
+	<xacro:macro name="palm_camera" params="prefix">
+		<link name="${prefix}_palm_camera_frame">
+			<visual>
+				<origin xyz="0 0 0" rpy="0 0 0" />
+				<geometry>
+					<box size = "${camera_box_extents}" />
+				</geometry>
+			</visual>
+<!--			<collision>
+				<origin xyz="0 0 0" rpy="0 0 0" />
+				<geometry>
+					<box size = "${camera_box_extents}" />
+				</geometry>
+			</collision>-->
+			<inertial>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
+				<mass value="0.03" />
+			</inertial>
+		</link>
+		
+		<link name="${prefix}_palm_camera_optical_frame">
+		</link>
+
+		<joint name="${prefix}_palm_camera_frame_joint" type="fixed">
+			<parent link="${prefix}_palm"/>
+			<child link="${prefix}_palm_camera_frame"/>
+			<origin xyz="-0.035 0.054 0.0" rpy="0 0 0" />
+		</joint>
+		<joint name="${prefix}_palm_camera_optical_frame_joint" type="fixed">
+			<parent link="${prefix}_palm_camera_frame"/>
+			<child link="${prefix}_palm_camera_optical_frame"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0 1.5708 1.5708" />
+		</joint>
+
+	</xacro:macro>
+
+</robot>

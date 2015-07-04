@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_stump" >
+
+  <xacro:macro name="hand_guard_collision_macro">
+    <!--Empty for no guard-->
+  </xacro:macro>
+
+</robot>

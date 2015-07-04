@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="armh_handle">
+    
+<xacro:include filename="$(find flor_atlas_description)/robots/irobot_hand_geometries.urdf.xacro" />
+
+<!-- roslaunch urdf_tutorial display.launch model:=handle.urdf gui:=True -->
+<!-- rosrun xacro xacro.py handle_urdf.xacro > handle.urdf -->
+<!-- tip: use measurements from solid to find the origins and length -->
+
+<xacro:property name="flex_joint_length" value=".016" />
+<xacro:property name="flex_joint_steps" value="9" />
+<xacro:property name="proximal_link_length" value=".062" />
+<xacro:property name="pi" value="3.14" />
+
+<xacro:macro name="irobot_hand" params="side parent reflect *origin">
+  
+  <!-- joint to irobot hand -->
+  <joint name="${side}_irobot_hand_joint" type="fixed">
+    <insert_block name="origin"/>
+    <parent link="${parent}"/>
+    <child link="${side}_base_link"/>
+  </joint>
+
+  <link name="${side}_base_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+    <!--  
+    <collision>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/palm_convex.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 -0.038 -0.023"/>
+    </collision>
+    -->
+    
+    <collision name='collision1'>
+      <origin xyz="0 0.02 0.045" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.114 0.1 0.075"/>
+      </geometry>
+    </collision>
+
+    <collision name='collision2'>
+      <origin xyz="0 -0.02 0.045" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0448" length="0.075"/>
+      </geometry>
+    </collision>
+    
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/palm.stl"/>
+      </geometry>
+      <material name="darkgray">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 -0.038 -0.023"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[0]/base_rotation_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+
+    <xacro:base_rotation_link_collisions/>
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_base.stl"/>
+      </geometry>
+      <material name="darkgray">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+      <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[0]/proximal_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+
+    <xacro:proximal_link_collisions/>
+      
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_proximal.stl"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.6 0.1 1"/>
+      </material>
+      <origin rpy="${pi/2} -${pi/2} 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[0]/distal_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+    <xacro:distal_link_collisions/>
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_distal.stl"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.6 0.1 1"/>
+      </material>
+      <origin rpy="0 ${pi} 0" xyz="0 0 0.0072"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[1]/base_rotation_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+    <xacro:base_rotation_link_collisions/>
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_base.stl"/>
+      </geometry>
+      <material name="darkgray">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+      <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[1]/proximal_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+      <xacro:proximal_link_collisions/>
+      
+      <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_proximal.stl"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.6 0.1 1"/>
+      </material>
+      <origin rpy="${pi/2} -${pi/2} 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[1]/distal_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+    <xacro:distal_link_collisions/>
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_distal.stl"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.6 0.1 1"/>
+      </material>
+      <origin rpy="0 ${pi} 0" xyz="0 0 0.0072"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[2]/proximal_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+    <xacro:proximal_link_collisions/>
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_proximal.stl"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.6 0.1 1"/>
+      </material>
+      <origin rpy="${pi/2} -${pi/2} 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+
+  <link name="${side}_finger[2]/distal_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+      </inertial>
+      
+    <xacro:distal_link_collisions/>
+    
+    <visual>
+      <geometry>
+        <mesh filename="package://flor_atlas_description/meshes_irobot/finger_distal.stl"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.6 0.1 1"/>
+      </material>
+      <origin rpy="0 ${pi} 0" xyz="0 0 0.0072"/>
+    </visual>
+  </link>
+
+  <!-- FINGER 0 -->
+  <joint name="${side}_f0_j0" type="revolute">
+    <parent link="${side}_base_link"/>
+    <child link="${side}_finger[0]/base_rotation_link"/>
+    <origin xyz="0.03075 0.038 0.069477" rpy="0 0 0" />
+    <axis xyz="0 0 -1"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <joint name="${side}_f0_j1" type="revolute">
+    <parent link="${side}_finger[0]/base_rotation_link"/>
+    <child link="${side}_finger[0]/proximal_link"/>
+    <origin xyz="0 0 0.0135" rpy="${pi/2} 0 -${pi}" />
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi}" velocity="0.5"/>
+  </joint>
+  
+  <joint name="${side}_f0_j2" type="revolute">
+    <parent link="${side}_finger[0]/proximal_link"/>
+    <child link="${side}_finger[0]/distal_link"/>
+    <origin xyz="0 0 0.0692" rpy="0 0 0" />
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+<!-- FINGER 1 -->
+  <joint name="${side}_f1_j0" type="revolute">
+    <parent link="${side}_base_link"/>
+    <child link="${side}_finger[1]/base_rotation_link"/>
+    <origin xyz="-0.03075 0.038 0.069477" rpy="0 0 0" />
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+  <joint name="${side}_f1_j1" type="revolute">
+    <parent link="${side}_finger[1]/base_rotation_link"/>
+    <child link="${side}_finger[1]/proximal_link"/>
+    <origin xyz="0 0 0.0135" rpy="${pi/2} 0 -${pi}" />
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi}" velocity="0.5"/>
+  </joint>
+  
+  <joint name="${side}_f1_j2" type="revolute">
+    <parent link="${side}_finger[1]/proximal_link"/>
+    <child link="${side}_finger[1]/distal_link"/>
+    <origin xyz="0 0 0.0692" rpy="0 0 0" />
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+
+
+<!-- FINGER 2 -->
+  <joint name="${side}_f2_j1" type="revolute">
+    <parent link="${side}_base_link"/>
+    <child link="${side}_finger[2]/proximal_link"/>
+    <origin xyz="0 -0.038 0.082755" rpy="${pi/2} 0 0" />
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi}" velocity="0.5"/>
+  </joint>
+  
+  <joint name="${side}_f2_j2" type="revolute">
+    <parent link="${side}_finger[2]/proximal_link"/>
+    <child link="${side}_finger[2]/distal_link"/>
+    <origin xyz="0 0 0.0692" rpy="0 0 0" />
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="0.5"/>
+  </joint>
+</xacro:macro>
+
+</robot>
