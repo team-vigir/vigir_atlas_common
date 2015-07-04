@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_irobot" >
   
-<!--  <xacro:include filename="$(find flor_atlas_description)/robots/flor_irobot_hand.urdf.xacro" />
+<!--  <xacro:include filename="$(find vigir_atlas_addons_description)/robots/flor_irobot_hand.urdf.xacro" />
 
   <xacro:irobot_hand side="left" parent="l_hand" reflect="-1">
     <origin rpy="1.57079 3.14159 3.14159" xyz="0 0.13 0"/>

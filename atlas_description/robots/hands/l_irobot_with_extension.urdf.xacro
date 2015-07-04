@@ -1,6 +1,8 @@
+<?xml version="1.0"?>
+
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="l_irobot" >
   
-  <xacro:include filename="$(find flor_atlas_description)/robots/flor_irobot_hand.urdf.xacro" />
+  <xacro:include filename="$(find vigir_atlas_addons_description)/robots/flor_irobot_hand.urdf.xacro" />
   
   <xacro:property name="extension_length" value="0.15" />
   <xacro:property name="extension_radius" value="0.04" />
