@@ -1,0 +1,157 @@
+diff --git a/atlas_description/urdf/atlas_v5_simple_shapes.urdf b/atlas_description/urdf/atlas_v5_simple_shapes.urdf
+index 9f6748c..861f40a 100644
+--- a/atlas_description/urdf/atlas_v5_simple_shapes.urdf
++++ b/atlas_description/urdf/atlas_v5_simple_shapes.urdf
+@@ -1010,7 +1010,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6632" soft_upper_limit="10.6632"/>
+   </joint>
+   <joint name="l_arm_elx" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 -0.119 0.0092"/>
++    <origin rpy="-0.39 0 0" xyz="0 -0.119 0.0092"/>
+     <axis xyz="-1.0 -0.0 -0.0"/>
+     <parent link="l_uarm"/>
+     <child link="l_larm"/>
+@@ -1019,7 +1019,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="12.3562"/>
+   </joint>
+   <joint name="l_arm_ely" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 -0.187 -0.016"/>
++    <origin rpy="0 -2.09 0" xyz="0 -0.187 -0.016"/>
+     <axis xyz="-0.0 -1.0 -0.0"/>
+     <parent link="l_scap"/>
+     <child link="l_uarm"/>
+@@ -1028,7 +1028,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="13.1416"/>
+   </joint>
+   <joint name="l_arm_shx" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 -0.11 -0.245"/>
++    <origin rpy="1.25 0 0" xyz="0 -0.11 -0.245"/>
+     <axis xyz="-1.0 -0.0 -0.0"/>
+     <parent link="l_clav"/>
+     <child link="l_scap"/>
+@@ -1037,7 +1037,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-11.5708" soft_upper_limit="11.5708"/>
+   </joint>
+   <joint name="l_arm_shz" type="revolute">
+-    <origin rpy="0 0 3.14159265359" xyz="0.1406 0.2256 0.4776"/>
++    <origin rpy="0 0 ${3.14159265359-0.24}" xyz="0.1406 0.2256 0.4776"/>
+     <axis xyz="0 0 1"/>
+     <parent link="utorso"/>
+     <child link="l_clav"/>
+@@ -1073,7 +1073,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-12.9671" soft_upper_limit="12.9671"/>
+   </joint>
+   <joint name="l_leg_akx" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 0 0"/>
++    <origin rpy="0.1 0 0" xyz="0 0 0"/>
+     <axis xyz="1 0 0"/>
+     <parent link="l_talus"/>
+     <child link="l_foot"/>
+@@ -1082,7 +1082,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.8" soft_upper_limit="10.8"/>
+   </joint>
+   <joint name="l_leg_aky" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 0 -0.422"/>
++    <origin rpy="0 -0.52 0" xyz="0 0 -0.422"/>
+     <axis xyz="0 1 0"/>
+     <parent link="l_lleg"/>
+     <child link="l_talus"/>
+@@ -1091,7 +1091,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-11" soft_upper_limit="10.7"/>
+   </joint>
+   <joint name="l_leg_hpx" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 0 0"/>
++    <origin rpy="-0.1 0 0" xyz="0 0 0"/>
+     <axis xyz="1 0 0"/>
+     <parent link="l_uglut"/>
+     <child link="l_lglut"/>
+@@ -1100,7 +1100,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.5236" soft_upper_limit="10.5236"/>
+   </joint>
+   <joint name="l_leg_hpy" type="revolute">
+-    <origin rpy="0 0 0" xyz="0.05 0.0225 -0.066"/>
++    <origin rpy="0 -0.52 0" xyz="0.05 0.0225 -0.066"/>
+     <axis xyz="0 1 0"/>
+     <parent link="l_lglut"/>
+     <child link="l_uleg"/>
+@@ -1118,7 +1118,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.1744" soft_upper_limit="10.7868"/>
+   </joint>
+   <joint name="l_leg_kny" type="revolute">
+-    <origin rpy="0 0 0" xyz="-0.05 0 -0.374"/>
++    <origin rpy="0 1.04 0" xyz="-0.05 0 -0.374"/>
+     <axis xyz="0 1 0"/>
+     <parent link="l_uleg"/>
+     <child link="l_lleg"/>
+@@ -1127,7 +1127,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="12.3564"/>
+   </joint>
+   <joint name="neck_ry" type="revolute">
+-    <origin rpy="0 0 0" xyz="0.2546 0 0.6215"/>
++    <origin rpy="0 0.72 0" xyz="0.2546 0 0.6215"/>
+     <axis xyz="0 1 0"/>
+     <parent link="utorso"/>
+     <child link="head"/>
+@@ -1136,7 +1136,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.6021" soft_upper_limit="11.1432"/>
+   </joint>
+   <joint name="r_arm_elx" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 -0.119 0.0092"/>
++    <origin rpy="-0.42 0 0" xyz="0 -0.119 0.0092"/>
+     <axis xyz="1 0 0"/>
+     <parent link="r_uarm"/>
+     <child link="r_larm"/>
+@@ -1145,7 +1145,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-12.3562" soft_upper_limit="10"/>
+   </joint>
+   <joint name="r_arm_ely" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 -0.187 -0.016"/>
++    <origin rpy="0 1.98 0" xyz="0 -0.187 -0.016"/>
+     <axis xyz="0 1 0"/>
+     <parent link="r_scap"/>
+     <child link="r_uarm"/>
+@@ -1154,7 +1154,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10" soft_upper_limit="13.1416"/>
+   </joint>
+   <joint name="r_arm_shx" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 -0.11 -0.245"/>
++    <origin rpy="1.25 0 0" xyz="0 -0.11 -0.245"/>
+     <axis xyz="1 0 0"/>
+     <parent link="r_clav"/>
+     <child link="r_scap"/>
+@@ -1163,7 +1163,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-11.5708" soft_upper_limit="11.5708"/>
+   </joint>
+   <joint name="r_arm_shz" type="revolute">
+-    <origin rpy="0 0 0" xyz="0.1406 -0.2256 0.4776"/>
++    <origin rpy="0 0 0.24" xyz="0.1406 -0.2256 0.4776"/>
+     <axis xyz="0 0 1"/>
+     <parent link="utorso"/>
+     <child link="r_clav"/>
+@@ -1208,7 +1208,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.8" soft_upper_limit="10.8"/>
+   </joint>
+   <joint name="r_leg_aky" type="revolute">
+-    <origin rpy="0 0 0" xyz="0 0 -0.422"/>
++    <origin rpy="0 -0.51 0" xyz="0 0 -0.422"/>
+     <axis xyz="0 1 0"/>
+     <parent link="r_lleg"/>
+     <child link="r_talus"/>
+@@ -1226,7 +1226,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.5236" soft_upper_limit="10.5236"/>
+   </joint>
+   <joint name="r_leg_hpy" type="revolute">
+-    <origin rpy="0 0 0" xyz="0.05 -0.0225 -0.066"/>
++    <origin rpy="0 -1.14 0" xyz="0.05 -0.0225 -0.066"/>
+     <axis xyz="0 1 0"/>
+     <parent link="r_lglut"/>
+     <child link="r_uleg"/>
+@@ -1244,7 +1244,7 @@
+     <safety_controller k_position="100" k_velocity="100" soft_lower_limit="-10.7868" soft_upper_limit="10.1744"/>
+   </joint>
+   <joint name="r_leg_kny" type="revolute">
+-    <origin rpy="0 0 0" xyz="-0.05 0 -0.374"/>
++    <origin rpy="0 1.65 0" xyz="-0.05 0 -0.374"/>
+     <axis xyz="0 1 0"/>
+     <parent link="r_uleg"/>
+     <child link="r_lleg"/>
