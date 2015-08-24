@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<!-- 
+s-model_articulated - articulated version of the robotiq s-model,
+3 fingered gripper.                                                
+-->
+<robot name="robotiq" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find vigir_atlas_addons_description)/robots/flor_robotiq_hand.urdf.xacro" />
+	
+  <link name="r_hand">
+    <inertial>
+        <mass value="0.1" />
+        <origin xyz="0 0 0.25" rpy="0 0 0" />
+        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <box size="0.005 0.005 0.005" />
+        </geometry>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0.25" rpy="0 0 0" />
+        <geometry>
+            <box size="0.005 0.005 0.005" />
+        </geometry>
+    </collision>
+  </link>		
+	
+  <xacro:s-model_articulated prefix="right" parent="r_hand">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </xacro:s-model_articulated>
+
+</robot>
+
