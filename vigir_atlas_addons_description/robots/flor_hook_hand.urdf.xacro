@@ -23,13 +23,13 @@
       </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://flor_atlas_description/meshes_hook/hook_convex.stl"/>
+        <mesh filename="package://vigir_atlas_addons_description/meshes/hook_convex.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0.0 -0.0"/>
     </collision>
     <visual>
       <geometry>
-        <mesh filename="package://flor_atlas_description/meshes_hook/hook_convex.stl"/>
+        <mesh filename="package://vigir_atlas_addons_description/meshes/hook_convex.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 -0.0 -0.0"/>  
       <material name="darkgray">
