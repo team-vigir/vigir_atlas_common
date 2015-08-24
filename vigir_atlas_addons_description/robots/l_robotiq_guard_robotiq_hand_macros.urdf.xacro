@@ -6,7 +6,7 @@
       <visual>
         <origin xyz="0 -0.115 0" rpy="0 -1.57 0"/>
         <geometry>
-            <mesh filename="package://flor_atlas_description/meshes/vigir_robotiq_guard.stl" />
+            <mesh filename="package://vigir_atlas_addons_description/meshes/vigir_robotiq_guard.stl" />
         </geometry>
         <material name="black">
             <color rgba="0 0 0 1"/>
@@ -15,7 +15,7 @@
       <collision>
         <origin xyz="0 -0.115 0" rpy="0 -1.57 0"/>
         <geometry>
-            <mesh filename="package://flor_atlas_description/meshes/vigir_robotiq_guard.stl" />
+            <mesh filename="package://vigir_atlas_addons_description/meshes/vigir_robotiq_guard.stl" />
         </geometry>
             <material name="yellow">
         <color rgba="0 1 1 1"/>
