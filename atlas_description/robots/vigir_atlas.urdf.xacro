@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
   <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5)_simple_shapes.urdf"/>
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).gazebo" />
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).$(optenv VIGIR_SIM_TYPE gazebo)" />
   <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).transmission" />
   
   <xacro:include filename="$(find atlas_description)/robots/multisense/$(optenv FLOR_MULTISENSE_TYPE sim)_multisense.urdf.xacro" />
