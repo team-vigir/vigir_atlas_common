@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" name="atlas" >
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5)_simple_shapes.urdf"/>
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).$(optenv VIGIR_SIM_TYPE gazebo)" />
-  <xacro:include filename="$(find atlas_description)/urdf/$(optenv FLOR_ROBOT_TYPE atlas_v5).transmission" />
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv VIGIR_ATLAS_ROBOT_TYPE atlas_v5)_simple_shapes.urdf"/>
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv VIGIR_ATLAS_ROBOT_TYPE atlas_v5).$(optenv VIGIR_SIM_TYPE gazebo)" />
+  <xacro:include filename="$(find atlas_description)/urdf/$(optenv VIGIR_ATLAS_ROBOT_TYPE atlas_v5).transmission" />
   
-  <xacro:include filename="$(find atlas_description)/robots/multisense/$(optenv FLOR_MULTISENSE_TYPE sim)_multisense.urdf.xacro" />
+  <xacro:include filename="$(find atlas_description)/robots/multisense/$(optenv VIGIR_ATLAS_MULTISENSE_TYPE sim)_multisense.urdf.xacro" />
   
-  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv FLOR_LEFT_HAND_TYPE l_stump).urdf.xacro" />
-  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv FLOR_RIGHT_HAND_TYPE r_stump).urdf.xacro" />
+  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv VIGIR_ATLAS_LEFT_HAND_TYPE l_stump).urdf.xacro" />
+  <xacro:include filename="$(find atlas_description)/robots/hands/$(optenv VIGIR_ATLAS_RIGHT_HAND_TYPE r_stump).urdf.xacro" />
 
   <!--Add a frame for use with high fidelity LIDAR projection-->
   <link name="hokuyo_spin_axis_frame"/>
